@@ -21,25 +21,25 @@ document.addEventListener('DOMContentLoaded',function(event){
       setTimeout(fnCallback, 700);
     }
   }
-  // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 700);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
-      // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
-    }
-  }
-  // start the text animation
-  StartTextAnimation(0);
+
+
+  function StartTextAnimation(i) {
+            if (typeof dataText[i] == 'undefined'){
+                        setTimeout(function() {
+                            StartTextAnimation(0);
+                        }, 2000);
+            } else if (dataText[i] && i < dataText[i].length) { 
+                    // text exists! start typewriter animation
+                    typeWriter(dataText[i], 0, function(){
+                    // after callback (and whole text has been animated), start next text
+                     StartTextAnimation(i + 1);
+                });
+            } 
+         }
+   StartTextAnimation(0);
+
 });
+
 
 
 // topbar
