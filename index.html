@@ -12,31 +12,54 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="modal">
+      <div class="modal-body">
+        <i class="fas fa-times modal-close-btn"></i>
+        <p>Hire Us!</p>
+        <button><i class="fab fa-whatsapp"></i> WhatsApp</button>
+      </div>
+    </div>
     <nav>
       <img
         src="https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg"
         alt="logo"
         class="logo"
       />
+
       <ul class="nav-list">
-        <li class="home-link">HOME</li>
-        <li class="about-link">ABOUT</li>
-        <li class="services-link">SERVICES</li>
-        <li class="projects-link">PROJECTS</li>
-        <li class="contact-link">CONTACT</li>
+        <li class="home-link"><a href="#home"> HOME </a></li>
+        <li class="about-link"><a href="#about"> ABOUT </a></li>
+        <li class="services-link"><a href="#services"> SERVICES </a></li>
+        <li class="projects-link"><a href="#projects"> PROJECTS</a></li>
+        <li class="contact-link"><a href="#contact"> CONTACT </a></li>
         <li class="company-profile-link">COMPANY PROFILE</li>
+        <button class="ham-btn">
+          <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </button>
       </ul>
     </nav>
-    <section class="home-section">
+    <div class="topbar">
+      <li class="home-top"><a href="#home"> HOME </a></li>
+      <li class="about-top"><a href="#about"> ABOUT </a></li>
+      <li class="services-top"><a href="#services"> SERVICES</a></li>
+      <li class="projects-top"><a href="#projects"> PROJECTS</a></li>
+      <li class="contact-top"><a href="#contact"> CONTACT</a></li>
+      <li class="company-profile-top">COMPANY PROFILE</li>
+    </div>
+    <section class="home-section" id="home">
       <p class="welcome-txt">
         WELCOME TO <br />
         <span class="welcome-txt-secondline">Ascend Digital Solutions</span>
       </p>
-      <div class="home-dynamic-txt-container">
+      <div class="home-dynamic-txt-container reveal">
         <i class="fas fa-caret-right"></i>
         <span class="home-dynamic-txt"></span>
       </div>
-      <div class="socials">
+      <div class="socials reveal">
         <div class="facebook">
           <i class="fab fa-facebook"></i>
         </div>
@@ -52,7 +75,7 @@
       </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
       <h1 class="section-title">About Us</h1>
       <div class="about-rightleft">
         <div class="about-left">
@@ -67,15 +90,18 @@
           <p class="right-main-para">
             Established in India, Ascend Digital Solutions delivers advanced IT
             , Marketing and Graphic Designing Services to provide best in class
-            services at an affordable price. We use standard procedures to
-            provide web and digital services to make sure they perform
-            exceptionally well. We enhance client satisfaction in terms of
-            providing quality in services and featured products. We customize
-            software solutions to meet up the precious client requirements. At
-            Ascend Digital Solutions, we maintain the long term liaison with
-            clients and business associates. Our core purpose is to be be a
-            well-reputed technology company focused on delivering innovative
-            solutions to our clients.
+            services at an affordable price.
+            <span>
+              We use standard procedures to provide web and digital services to
+              make sure they perform exceptionally well. We enhance client
+              satisfaction in terms of providing quality in services and
+              featured products. We customize software solutions to meet up the
+              precious client requirements. At Ascend Digital Solutions, we
+              maintain the long term liaison with clients and business
+              associates. Our core purpose is to be be a well-reputed technology
+              company focused on delivering innovative solutions to our
+              clients.</span
+            >
           </p>
           <hr />
           <p class="right-subline">Technologies We work with:</p>
@@ -95,10 +121,10 @@
         </div>
       </div>
     </section>
-    <section class="what-we-do-section">
+    <section class="what-we-do-section" id="services">
       <h1>What We Do</h1>
       <div class="cards">
-        <div class="card full-app-dev">
+        <div class="card full-app-dev reveal">
           <div class="card-inner">
             <div class="card-front card-face app-front">
               <p>Full App Development</p>
@@ -119,7 +145,7 @@
             </div>
           </div>
         </div>
-        <div class="card ui-ux">
+        <div class="card ui-ux reveal">
           <div class="card-inner">
             <div class="card-front card-face ui-front">
               <p>UI/UX Designing</p>
@@ -140,7 +166,7 @@
             </div>
           </div>
         </div>
-        <div class="card rapid-prototype">
+        <div class="card rapid-prototype reveal">
           <div class="card-inner">
             <div class="card-front card-face prototype-front">
               <p>Rapid Prototyping</p>
@@ -161,7 +187,7 @@
             </div>
           </div>
         </div>
-        <div class="card content-writing">
+        <div class="card content-writing reveal">
           <div class="card-inner">
             <div class="card-front card-face content-front">
               <p>Content Writing</p>
@@ -182,7 +208,7 @@
             </div>
           </div>
         </div>
-        <div class="card digital-marketing">
+        <div class="card digital-marketing reveal">
           <div class="card-inner">
             <div class="card-front card-face digital-front">
               <p>Digital Marketing</p>
@@ -204,7 +230,7 @@
         </div>
       </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="projects">
       <h1>Portfolio</h1>
       <div class="slider">
         <div class="slider-content">
@@ -212,6 +238,12 @@
             <img
               src="https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg"
               alt=""
+              class="slider-first-img"
+            />
+            <img
+              src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+              alt=""
+              class="slider-second-img"
             />
           </a>
           <a href="">
@@ -219,34 +251,49 @@
               src="https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg"
               alt=""
             />
-          </a>
-          <a href="">
             <img
-              src="https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg"
+              src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
               alt=""
+              class="slider-second-img"
             />
           </a>
           <a href="">
             <img
               src="https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg"
               alt=""
+            />
+            <img
+              src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+              alt=""
+              class="slider-second-img"
+            />
+          </a>
+          <a href="">
+            <img
+              src="https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg"
+              alt=""
+            />
+            <img
+              src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+              alt=""
+              class="slider-second-img"
             />
           </a>
         </div>
       </div>
     </section>
-    <section class="get-in-touch">
+    <section class="get-in-touch" id="contact">
       <h1>Get in Touch</h1>
-      <div class="contact-container">
+      <div class="contact-container reveal">
         <div class="adress">
           <i class="fas fa-home"></i>
           <p>Lucknow,Uttar pradesh, India</p>
         </div>
-        <div class="phone">
+        <div class="phone reveal">
           <i class="fas fa-phone"></i>
           <p>(+91) 700 4297500</p>
         </div>
-        <div class="mail">
+        <div class="mail reveal">
           <i class="fas fa-envelope"></i>
           <p>info@ascend-digital.in</p>
         </div>
