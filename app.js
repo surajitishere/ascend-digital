@@ -41,15 +41,65 @@ document.addEventListener('DOMContentLoaded',function(event){
   StartTextAnimation(0);
 });
 
-let sliderItems = document.querySelectorAll(".slider-content a img");
 
-sliderItems.forEach((items)=>{
-    items.addEventListener("mouseenter", (items)=>{
-        items.path[0].setAttribute("src" , "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg")
-    } )
+// topbar
+
+let hamburger = document.querySelector('.hamburger');
+let topbar = document.querySelector('.topbar');
+let topbarLinks = document.querySelectorAll('.topbar li')
+ 
+hamburger.addEventListener('click',()=>{
+  topbar.classList.toggle("topbar-height")
+  hamburger.classList.toggle("is-active");
 })
-sliderItems.forEach((items)=>{
-    items.addEventListener("mouseout", (items)=>{
-        items.path[0].setAttribute("src" , "https://cdn5.vectorstock.com/i/1000x1000/92/59/simple-lettering-bold-random-logo-vector-33589259.jpg")
-    } )
+
+topbarLinks.forEach(links=>{
+  links.addEventListener('click',()=>{
+    topbar.classList.remove("topbar-height")
+    hamburger.classList.remove("is-active");
+  })
 })
+
+
+// modal
+
+let hireBtn = document.querySelectorAll(".hire-btn");
+let modalCloseBtn = document.querySelectorAll(".modal-close-btn");
+
+hireBtn.forEach(btn =>{
+  btn.addEventListener('click', function() {
+     document.querySelector(".modal").style.display = 'flex';
+     document.querySelector("body").style.overflow = 'hidden';
+ });
+})
+
+modalCloseBtn.forEach(btn =>{
+  btn.addEventListener('click', function() {
+     document.querySelector(".modal").style.display = 'none';
+    document.querySelector("body").style.overflow = 'visible';
+ });
+})
+
+//revel on scroll
+
+window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+
+      for(var i = 0; i < reveals.length; i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 30;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+
+
