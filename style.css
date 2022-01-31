@@ -3,13 +3,67 @@
   list-style-type: none;
   margin: 0px;
 }
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+.modal-body {
+  height: 180px;
+  width: 350px;
+  background-color: white;
+  padding: 15px;
+}
+.fa-times {
+  font-size: 25px;
+  margin-left: 300px;
+  color: rgb(221, 3, 3);
+  transition: all 0.2s;
+}
+.fa-times:hover {
+  transform: scale(1.2);
+  color: rgb(253, 6, 6);
+}
+.modal-body p {
+  font-size: 35px;
+  text-align: center;
+}
+.modal-body button {
+  width: 135px;
+  height: 35px;
+  font-size: 18px;
+  margin-top: 20px;
+  background-color: #25d366;
+  border: none;
+  margin-left: 90px;
+  box-shadow: 0px 2px 5px;
+  transition: all 0.2s;
+}
+.modal-body button:hover {
+  transform: scale(1.1);
+}
+.what-we-do-section h1 {
+  margin-top: 80px;
+}
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(82, 82, 82, 0.637);
+  z-index: 4;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 nav {
   height: 60px;
   width: 100%;
   position: sticky;
-  background-color: white;
   top: 0px;
   z-index: 3;
+  background-color: white;
 }
 .logo {
   width: 110px;
@@ -47,6 +101,27 @@ nav ul li:hover {
 .company-profile-link:hover {
   background-color: rgba(156, 87, 87, 0.404);
 }
+.topbar {
+  position: sticky;
+  top: 60px;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.4s;
+  box-shadow: 0px 8px 10px -8px #111;
+  background-color: white;
+  z-index: 3;
+}
+.topbar-height {
+  height: 220px;
+}
+.topbar li {
+  margin: 15px 50px;
+  transition: all 0.2s;
+}
+.topbar li:hover {
+  margin-left: 65px;
+  color: rgb(185, 53, 53);
+}
 .home-section {
   height: 80vh;
 }
@@ -78,11 +153,12 @@ nav ul li:hover {
   background-color: rgb(185, 53, 53);
 }
 .about-section {
-  height: 100vh;
+  height: 100vh auto;
 }
 .about-rightleft {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 h1 {
   font-size: 50px;
@@ -94,6 +170,10 @@ h1 {
   width: 300px;
   display: block;
   margin: 0 auto;
+}
+.about-right {
+  padding: 10px;
+  max-width: 600px;
 }
 .right-firstline {
   color: rgb(185, 53, 53);
@@ -109,10 +189,9 @@ h1 {
   text-align: left;
   font-size: 18px;
   line-height: 28px;
-  width: 600px;
 }
 .about-right hr {
-  width: 600px;
+  width: 100%;
   background-color: black;
   height: 3px;
   margin: 20px 0px;
@@ -128,7 +207,7 @@ h1 {
   font-weight: 1000;
 }
 .what-we-do-section {
-  height: 100vh;
+  height: 100vh auto;
 }
 .cards {
   width: 80vw;
@@ -188,7 +267,7 @@ h1 {
   margin-top: 80px;
 }
 .card-back hr {
-  width: 240px;
+  width: 80%;
   margin: 0px auto;
 }
 .details-btn {
@@ -200,6 +279,9 @@ h1 {
   background-color: white;
   border-radius: 5px;
 }
+.details-btn:hover {
+  background-color: rgba(185, 53, 53, 0.384);
+}
 .hire-btn {
   height: 35px;
   width: 130px;
@@ -208,6 +290,9 @@ h1 {
   color: white;
   background-color: rgb(185, 53, 53);
   border: none;
+}
+.hire-btn:hover {
+  background-color: rgb(182, 22, 22);
 }
 .card-btn-wrapper {
   position: absolute;
@@ -233,7 +318,15 @@ h1 {
   width: 580px;
   height: 230px;
   margin: 0px 5px;
-  transition: all 3s;
+  transition: all 1s;
+}
+
+.slider-second-img:hover {
+  opacity: -1;
+}
+.slider-second-img {
+  position: relative;
+  top: -230px;
 }
 .slider-content {
   display: flex;
@@ -251,10 +344,12 @@ h1 {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
 .contact-container div {
   width: 300px;
   height: 150px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
   box-shadow: 0px 0px 10px black;
 }
@@ -269,10 +364,120 @@ h1 {
 }
 .contact-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  height: auto;
 }
 .copyright {
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
+}
+.ham-btn {
+  display: none;
+  border: none;
+  background-color: inherit;
+}
+.hamburger .line {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#hamburger-1.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(13px) rotate(45deg);
+  -ms-transform: translateY(13px) rotate(45deg);
+  -o-transform: translateY(13px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
+}
+.sidebar li {
+  margin: 20px 5px;
+}
+.reveal {
+  position: relative;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+@media only screen and (max-width: 860px) {
+  .nav-list li {
+    display: none;
+  }
+  .ham-btn {
+    display: inline;
+  }
+  .welcome-txt {
+    font-size: 60px;
+  }
+  .welcome-txt span {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .welcome-txt {
+    margin-left: 70px;
+    font-size: 50px;
+  }
+  .welcome-txt span {
+    font-size: 50px;
+  }
+  .home-dynamic-txt-container {
+    margin-left: 70px;
+  }
+  .socials {
+    margin-left: 80px;
+  }
+  .slider-content a {
+    width: 450px;
+  }
+  .slider-content a img {
+    width: 430px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .right-main-para span {
+    display: none;
+  }
+  .welcome-txt {
+    margin-left: 50px;
+    font-size: 40px;
+  }
+  .welcome-txt span {
+    font-size: 40px;
+  }
+  .home-dynamic-txt-container {
+    margin-left: 50px;
+    font-size: 20px;
+  }
+  .socials {
+    margin-left: 60px;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .slider-content a {
+    width: 320px;
+  }
+  .slider-content a img {
+    width: 300px;
+  }
 }
